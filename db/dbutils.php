@@ -17,7 +17,7 @@ function checkLogin($email, $password){
             $error = "Email non esistente!";
         }
         else{
-            if(!password_verify($password,$utente['password'])){
+            if(!password_verify($password,$utente['password_hash'])){
                 $error = "Password errata!";
             }
         }
@@ -32,19 +32,9 @@ function getUserByEmail($email){
     global $pdo;
 
     try{
-        $sql = "SELECT ruolo,id FROM utenti WHERE email = ?";
+        $sql = "SELECT id, ruolo FROM utenti WHERE email = ?";
         $result = $pdo->prepare($sql);
         $result->execute([$email]);
-
-        $utente = $result->fetch(PDO::FETCH_ASSOC);
-        
-        if($utente["ruolo"] === "Docente" || $utente["ruolo"] === "Amministratore"){
-            $sql = "SELECT nome,cognome FROM docenti d JOIN utenti u ON d.id = u.id WHERE d.id = ?";
-        }else{
-            $sql = "SELECT nome,cognome,ruolo FROM studenti s JOIN utenti u ON s.id = u.id WHERE s.id = ?";
-        }
-        $result = $pdo->prepare($sql);
-        $result->execute($utente["id"]);
 
         $utente = $result->fetch(PDO::FETCH_ASSOC);
 

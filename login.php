@@ -30,8 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if (empty($loginError)) {
             $utente = getUserByEmail($email);
-            $_SESSION["nome"] = $utente['nome'];
-            $_SESSION["cognome"] = $utente['cognome'];
+            $_SESSION["email"] = $utente['email'];
             $_SESSION["ruolo"] = $utente['ruolo'];
             header("Location: dashboard.php");
             exit;
