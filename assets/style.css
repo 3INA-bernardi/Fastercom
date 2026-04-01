@@ -10,8 +10,8 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #2d3436; 
-    color: #fab1a0; /* Testo color pesca */
+    background-color: #4f46e5; 
+    color: #ffffff; 
 }
 
 body{
@@ -30,7 +30,7 @@ nav{
     display: flex;
     justify-content: space-around; 
     align-items: center;
-    background-color: #e67e22; 
+    background-color: #000000; 
     padding: 0 30px;
 }
 
@@ -74,25 +74,25 @@ form button{
     padding: 10px;
     border-radius: 6px;
     border: none;
-    background-color: #e67e22;
+    background-color: #22e656;
     color: white;
     cursor: pointer;
     font-weight: bold;
 }
 
 form button:hover{
-    background-color: #d35400; 
+    background-color: #9f50e9; 
 }
 
 
 footer{
     height: 60px;
     width: 100%;
-    background-color: #636e72;
+    background-color: #4f46e5;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #dfe6e9;
+    color: white;
     font-size: 13px;
     margin-top: auto; 
 }
