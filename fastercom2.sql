@@ -131,13 +131,13 @@ CREATE TABLE `utenti` (
 --
 
 INSERT INTO `utenti` (`id`, `email`, `password_hash`, `ruolo`) VALUES
-(1, 'mario.rossi@fastercom.it', 'mario123', 'Amministratore'),
-(2, 'giulia.neri@fastercom.it', 'giulia123', 'Docente'),
-(3, 'paolo.gialli@fastercom.it', 'paolo123', 'Docente'),
-(4, 'sara.blu@fastercom.it', 'sara123\r\n', 'Docente'),
-(5, 'marco.ferrari@fastercom.it', 'marco123', 'Studente'),
-(6, 'luca.esposito@fastercom.it', 'luca123', 'Studente'),
-(7, 'chiara.romano@fastercom.it', 'chiara123', 'Studente');
+(1, 'mario.rossi@fastercom.it', '$2y$10$glyMKM2V6lqgii0HNSjQS.rSKC8gETfieeFkCJ.CQKyFLFEI50TvS', 'Amministratore'),
+(2, 'giulia.neri@fastercom.it', '$2y$10$dZVNaN0PW.EjKsS5tTFF0.huEWYwpFexMGCa8u6zf6zQUPc96OT8i', 'Docente'),
+(3, 'paolo.gialli@fastercom.it', '$2y$10$5CCj0Cfn0NP1DhlttKPKWeCmz4SQcKED8rvI/ulWxIbPlHo4aaCfC', 'Docente'),
+(4, 'sara.blu@fastercom.it', '$2y$10$9bWKrKjuyHwyC.kkkWOps.PW/CcfSj3zOvo8hkjvljomZdJGoivNC', 'Docente'),
+(5, 'marco.ferrari@fastercom.it', '$2y$10$9DFBONG1nTPXEmAZJQOKbu3h1o0fNWvL/8B8IadEoou7v9ZpfW3mG', 'Studente'),
+(6, 'luca.esposito@fastercom.it', '$2y$10$piRDlkPfH1x0kstOK0xsiuVKsRDWHmZsIgLH8UBCjCoP59lnGA5ly', 'Studente'),
+(7, 'chiara.romano@fastercom.it', '$2y$10$v295exXgqVeUwQmgU/CNfekO0YxT71eo/cnB9U0oC1dvbyTW.875K', 'Studente');
 
 -- --------------------------------------------------------
 

@@ -32,7 +32,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $utente = getUserByEmail($email);
             $_SESSION["email"] = $utente['email'];
             $_SESSION["ruolo"] = $utente['ruolo'];
-            header("Location: dashboard.php");
+            
+            if(($_SESSION["ruolo"])=="Studente"){
+                header("Location: dashboard_studente.php");
+            }else if(($_SESSION["ruolo"])=="Docente"){
+                header("Location: dashboard_insegnante.php");
+            }else{
+                echo "Nessuna reindirizzazione";
+            }
             exit;
         } else {
             $errors[] = $loginError;
