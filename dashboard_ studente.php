@@ -24,12 +24,9 @@ $materie = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-<header>
-        <h1>Liceo P. Lodron</h1>
-</header>
-
-
+<?php require_once "components/navbar.php"; ?>
 <main>
+    
     <div class="dashboard">
         <h1>Benvenuto</h1>
         <p class="email"><?= htmlspecialchars($_SESSION["email"]) ?></p>
