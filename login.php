@@ -30,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if (empty($loginError)) {
             $utente = getUserByEmail($email);
+            $_SESSION["id"] = $utente['id'];
             $_SESSION["email"] = $utente['email'];
             $_SESSION["ruolo"] = $utente['ruolo'];
             
@@ -60,9 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 
 <body>
-    <header>
-        <h1>Liceo P. Lodron</h1>
-    </header>
     <?php require_once "components/navbar.php"; ?>
     <main>
         <?php if (!empty($errors)) { ?>

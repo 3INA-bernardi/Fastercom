@@ -44,4 +44,23 @@ function getUserByEmail($email){
         echo "<script>alert('Errore" . $e->getMessage() . "')</script>";
     }
 }
+
+function classiDocente($id){
+    global $pdo;
+
+    try {
+        $sql = "SELECT c.nome FROM docenti d
+        JOIN insegnamenti i ON d.id = i.docente_id 
+        JOIN classi c ON i.classe_id = c.id WHERE d.utente_id = ?";
+        $result = $pdo->prepare($sql);
+        $result->execute([$id]);
+
+        $classi = $result->fetchAll(PDO::FETCH_ASSOC);
+
+        return $classi;
+    } catch(PDOException $e){
+        echo "<script>alert('Errore" . $e->getMessage() . "')</script>";
+    }
+}
+
 ?>
