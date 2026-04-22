@@ -12,7 +12,7 @@ header{
     align-items: center;
     gap: 14px;
     padding: 22px 30px;
-    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    background: #4f46e5;
     color: #ffffff;
     text-align: center;
 }
@@ -66,19 +66,29 @@ nav{
     display: flex;
     justify-content: space-around; 
     align-items: center;
-    background-color: #cc00ff; 
+    background: #4f46e7;
     padding: 0 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 nav a{
     color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: 0.3s; 
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+
 }
 
 nav a:hover{
-    color: #34004d; 
+    background-color: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+}
+
+nav a:active{
+    transform: scale(0.92);
+    background-color: rgba(0,0,0,0.2);
 }
 
 main{

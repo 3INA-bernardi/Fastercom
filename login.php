@@ -60,9 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 
 <body>
-    <header>
-        <h1>Liceo P. Lodron</h1>
-    </header>
     <?php require_once "components/navbar.php"; ?>
     <main>
         <?php if (!empty($errors)) { ?>
