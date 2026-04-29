@@ -83,6 +83,8 @@ $classe = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <form class="form">
                 <input placeholder="Nome" class="input" type="text">
                 <input placeholder="Cognome" class="input" type="text">
+                <input placeholder="Data di nascita" class="input" type="date">
+                <input placeholder="Codice Fiscale" class="input" type="text">
 
                 <select name="classe" id="classe">
                     <option value=""> -- Seleziona una classe -- </option>
@@ -95,10 +97,11 @@ $classe = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <input placeholder="Email" class="input" type="email">
                 <input placeholder="Password" class="input" type="password">
-
                 <button>Aggiungi Studente</button>
             </form>
         </div>
+
+
 
     </div>
 </div>
