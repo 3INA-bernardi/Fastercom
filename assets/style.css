@@ -193,3 +193,111 @@ table{
     font-size: 14px;
     opacity: 0.9;
 }
+
+
+.admin-dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.dashboard-title {
+    font-size: 2rem;
+    color: #4f46e5;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.admin-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.admin-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 35px 30px;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.15);
+}
+
+.admin-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(79, 70, 229, 0.3);
+}
+
+.btn-icon {
+    font-size: 2.5rem;
+    display: block;
+}
+
+.btn-text {
+    display: block;
+    font-size: 0.95rem;
+}
+
+.admin-btn-studenti,
+.admin-btn-insegnanti,
+.admin-btn-materie {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: white;
+}
+
+.dashboard-flex{
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* SINISTRA 3/4 */
+.studenti-lista{
+    flex: 3;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* DESTRA 1/4 */
+.studenti-form{
+    flex: 1;
+}
+
+/* TABELLA */
+.studenti-tabella{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.studenti-tabella thead{
+    background: #4f46e5;
+    color: white;
+}
+
+.studenti-tabella th,
+.studenti-tabella td{
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.studenti-tabella tr:hover{
+    background-color: rgba(79, 70, 229, 0.08);
+}
