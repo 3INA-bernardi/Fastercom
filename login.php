@@ -39,7 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 header("Location: dashboard_studente.php");
             }else if(($_SESSION["ruolo"])=="Docente"){
                 header("Location: dashboard_insegnante.php");
-            }else{
+            }
+            else if(($_SESSION["ruolo"])=="Amministratore"){
+                header("Location: dashboard_amministratore.php");
+            }
+            else{
                 echo "Nessuna reindirizzazione";
             }
             exit;
