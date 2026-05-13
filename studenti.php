@@ -66,7 +66,7 @@ $classe = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <main>  
     <div class="dashboard">
     <h1>Benvenuto</h1>
-    <p class="email"><?= htmlspecialchars($_SESSION["email"]) ?></p>
+
 
     <div class="dashboard-flex">
         <div class="studenti-lista">
@@ -137,3 +137,4 @@ $classe = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </body>
 </html>
+
