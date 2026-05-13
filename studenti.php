@@ -2,7 +2,33 @@
 require_once "components/session.php";
 require_once "db/connection.php";
 
+if ($_POST) {
+    $nome = $_POST['nome'];
+    $cognome = $_POST['cognome'];
+    $data_nascita = $_POST['data_nascita'];
+    $codice_fiscale = $_POST['codice_fiscale'];
+    $classe = $_POST['classe'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
+    $sql_classe = "SELECT id FROM classi WHERE nome = ?";
+    $stmt_classe = $pdo->prepare($sql_classe);
+    $stmt_classe->execute([$classe]);
+    $classe_data = $stmt_classe->fetch(PDO::FETCH_ASSOC);
+    $classe_id = $classe_data['id'];
+
+    $password_hash = password_hash($password, PASSWORD_BCRYPT);
+
+    $sql_utente = "INSERT INTO utenti (email, password_hash, ruolo) VALUES (?, ?, 'Studente')";
+    $stmt_utente = $pdo->prepare($sql_utente);
+    $stmt_utente->execute([$email, $password_hash]);
+    $utente_id = $pdo->lastInsertId();
+
+    $sql_studente = "INSERT INTO studenti (utente_id, classe_id, nome, cognome, data_nascita, codice_fiscale) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt_studente = $pdo->prepare($sql_studente);
+    $stmt_studente->execute([$utente_id, $classe_id, $nome, $cognome, $data_nascita, $codice_fiscale]);
+
+}
 
 $sql = "SELECT 
             s.nome, 
@@ -80,13 +106,13 @@ $classe = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
         <div class="studenti-form">
-            <form class="form">
-                <input placeholder="Nome" class="input" type="text">
-                <input placeholder="Cognome" class="input" type="text">
-                <input placeholder="Data di nascita" class="input" type="date">
-                <input placeholder="Codice Fiscale" class="input" type="text">
+            <form class="form" method="post" action="">
+                <input placeholder="Nome" class="input" type="text" name="nome" required>
+                <input placeholder="Cognome" class="input" type="text" name="cognome" required>
+                <input placeholder="Data di nascita" class="input" type="date" name="data_nascita">
+                <input placeholder="Codice Fiscale" class="input" type="text" name="codice_fiscale">
 
-                <select name="classe" id="classe">
+                <select name="classe" id="classe" required>
                     <option value=""> -- Seleziona una classe -- </option>
                     <?php foreach ($classe as $c): ?>
                         <option value="<?= $c['nome']; ?>">
@@ -95,9 +121,9 @@ $classe = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <?php endforeach; ?>
                 </select>
 
-                <input placeholder="Email" class="input" type="email">
-                <input placeholder="Password" class="input" type="password">
-                <button>Aggiungi Studente</button>
+                <input placeholder="Email" class="input" type="email" name="email" required>
+                <input placeholder="Password" class="input" type="password" name="password" required>
+                <button type="submit">Aggiungi Studente</button>
             </form>
         </div>
 
