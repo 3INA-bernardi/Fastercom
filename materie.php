@@ -12,7 +12,6 @@ if ($_POST) {
     $sql_utente = "INSERT INTO materie (nome) VALUES (?)";
     $stmt_utente = $pdo->prepare($sql_utente);
     $stmt_utente->execute([$nome]);
-    $utente_id = $pdo->lastInsertId();
 }
 
 $sql = "SELECT nome
