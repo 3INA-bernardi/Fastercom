@@ -5,7 +5,7 @@
     </div>
 
     <nav class="main-nav">
-        <a href="dashboard_studente.php">Dashboard</a>
+        <a href="dashboard.php">Dashboard</a>
         <a href="logout.php">Logout</a>
     </nav>
 </header>
