@@ -63,4 +63,29 @@ function classiDocente($id){
     }
 }
 
+function studentiPerClasseDocente($utenteId, $nomeClasse){
+    global $pdo;
+
+    try {
+        $sql = "SELECT s.nome, s.cognome, s.data_nascita, u.email 
+                FROM studenti s
+                JOIN classi c ON s.classe_id = c.id
+                JOIN utenti u ON s.utente_id = u.id
+                JOIN insegnamenti i ON c.id = i.classe_id
+                JOIN docenti d ON i.docente_id = d.id
+                WHERE d.utente_id = ? AND c.nome = ?
+                ORDER BY s.cognome, s.nome";
+
+        $result = $pdo->prepare($sql);
+        $result->execute([$utenteId, $nomeClasse]);
+
+        $studenti = $result->fetchAll(PDO::FETCH_ASSOC);
+
+        return $studenti;
+    } catch(PDOException $e){
+        echo "<script>alert('Errore" . $e->getMessage() . "')</script>";
+        return [];
+    }
+}
+
 ?>

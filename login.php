@@ -33,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["id"] = $utente['id'];
             $_SESSION["email"] = $utente['email'];
             $_SESSION["ruolo"] = $utente['ruolo'];
-            $_SESSION["id"] = $utente['id'];
             
             if(($_SESSION["ruolo"])=="Studente"){
                 header("Location: dashboard_studente.php");
