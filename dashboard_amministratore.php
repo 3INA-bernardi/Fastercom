@@ -4,6 +4,7 @@ require_once "db/connection.php";
 
 if ($_SESSION["ruolo"] !== "Amministratore") {
   header("Location: login.php");
+  exit;
 }
 
 ?>

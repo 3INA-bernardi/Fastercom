@@ -284,7 +284,6 @@ table{
     border-radius: 10px;
 }
 
-/* DESTRA 1/4 */
 .studenti-form{
     flex: 1;
     height: 100%;
@@ -296,7 +295,6 @@ table{
     justify-content: flex-start;
 }
 
-/* TABELLA */
 .studenti-tabella{
     width: 100%;
     border-collapse: collapse;

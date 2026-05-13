@@ -4,6 +4,7 @@ require_once "db/dbutils.php";
 
 if ($_SESSION["ruolo"] !== "Docente") {
   header("Location: login.php");
+  exit;
 }
 
 $classi = classiDocente($_SESSION["id"]);
