@@ -2,6 +2,11 @@
 require_once "components/session.php";
 require_once "db/connection.php";
 
+if (!isset($_SESSION["ruolo"]) || $_SESSION["ruolo"] !== "Amministratore") {
+    header("Location: index.php");
+    exit;
+}
+
 if ($_POST) {
     $nome = $_POST['nome'];
     $cognome = $_POST['cognome'];
@@ -137,4 +142,3 @@ $classe = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </body>
 </html>
-
